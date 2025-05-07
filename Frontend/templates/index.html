@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Detection System</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+  </head>
+  <body>
+    <div class="project-container">
+      <h1>&#128293; Fire Detection System</h1>
+
+      <div class="alert-msg">
+        <div id="resultBox" style=" display: none; margin-top: 20px; font-size: 1.5rem; font-weight: bold;"></div>
+      </div>
+
+      <div class="input-controls">
+        <div class="for-uploads">
+          <form id="uploadForm" enctype="multipart/form-data">
+            <h2 class="form-heading">Upload a Video</h2>
+            <input class="upload" type="file" accept="video/*" required />
+            <button type="submit" class="btn">Detect Fire</button>
+          </form>
+
+          <div id="preview"></div>
+        </div>
+
+        <div class="live-camera">
+          <h2> For Live Camera &#127909 </h2>
+          <a href="{{ url_for('camera') }}" class="cam-btn"> On Camera </a>
+        </div>
+      </div>
+
+
+      <footer class="footer">
+        Developed by Team Losers 🔥 | © 2025 Fire Detection System
+      </footer>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>

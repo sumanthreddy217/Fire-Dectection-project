@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cam Access</title>
+
+    <!-- <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000000;
+        }
+
+        .alert_msg
+        {
+            height: 80px;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        }
+
+        #resultBox
+        {
+            width: 150px;
+            height: 33px;
+            color: #000;
+            border-radius: 10px;
+            background: #ff1900ee;
+            text-align: center;
+        }
+        
+        .cam-box
+        {
+            border: 2px solid #ffffff;
+            background: #b3b3b35a;
+            border-radius: 18px;
+            padding-bottom: 20px;
+        }
+
+        .video-cam
+        {
+            border: 1px solid;
+            border-radius: 18px;
+            box-shadow: 0 0 3px black;
+        }
+
+        .btns
+        {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            margin-top: 1.1rem;
+        }
+
+        #startCameraBtn,
+        #stopCameraBtn
+        {
+            border-radius: 5px;
+            margin: 2px;
+            padding: 4px;
+            background: aliceblue;
+            border: 1px solid black;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn
+        {
+            margin-top: 5rem;
+        }
+
+        .btn a
+        {
+            text-decoration: none;
+            color: #ffffff;
+            border: 2px solid white;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .btn a:hover
+        {
+            color: #000000;
+            background: white;
+            font-weight: 600;
+        }
+    </style> -->
+
+    <style>
+        * 
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    
+        .main-container 
+        {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000000;
+            padding: 1rem;
+        }
+    
+        .alert_msg 
+        {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 1.5rem;
+        }
+    
+        #resultBox 
+        {
+            width: 150px;
+            height: 33px;
+            color: #000;
+            border-radius: 10px;
+            background: #ff1900ee;
+            text-align: center;
+        }
+    
+        .cam-box 
+        {
+            border: 2px solid #ffffff;
+            background: #b3b3b35a;
+            border-radius: 18px;
+            padding: 1rem;
+            width: 100%;
+            max-width: 520px;
+        }
+    
+        .video-cam 
+        {
+            border-radius: 18px;
+            box-shadow: 0 0 3px black;
+            overflow: hidden;
+        }
+    
+        video 
+        {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            display: block;
+        }
+    
+        .btns 
+        {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 1.1rem;
+        }
+    
+        #startCameraBtn,
+        #stopCameraBtn 
+        {
+            border-radius: 5px;
+            margin: 2px;
+            padding: 8px 16px;
+            background: aliceblue;
+            border: 1px solid black;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    
+        .btn 
+        {
+            margin-top: 2rem;
+        }
+    
+        .btn a 
+        {
+            text-decoration: none;
+            color: #ffffff;
+            border: 2px solid white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    
+        .btn a:hover 
+        {
+            color: #000000;
+            background: white;
+            font-weight: 600;
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 600px) 
+        {
+            .btns 
+            {
+                flex-direction: column;
+                gap: 10px;
+            }
+    
+            #resultBox 
+            {
+                font-size: 1rem;
+            }
+    
+            .btn a 
+            {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="alert_msg">
+            <div id="resultBox" style=" display: none; margin-top: 20px; font-size: 1.5rem; font-weight: bold;"></div>
+        </div>
+        <div class="cam-box">
+            <div class="video-cam">
+                <video id="camera" autoplay playsinline width="495" height="370" style="border-radius: 18px;"></video>
+            </div>
+            <div class="btns">
+                <button id="startCameraBtn">Start Camera</button>
+                <button id="stopCameraBtn">Stop Camera</button>
+            </div>
+            <div class="result"></div>
+        </div>
+        <div class="btn">
+            <a href="{{ url_for('home') }}"> &#8678 Go Back</a>
+        </div>
+    </div>
+
+    <!-- <script src="camera.js"></script> -->
+    <script src="{{ url_for('static', filename='camera.js') }}"></script>
+
+</body>
+</html>

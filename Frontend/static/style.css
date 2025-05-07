@@ -1,0 +1,253 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a1a;
+}
+
+/* -- main container background -- */
+.project-container
+{
+    width: 100%;
+    height: 100vh;
+    background: #1a1a1a;
+    text-align: center;
+    color: azure;
+    border-radius: 7px;
+}
+
+.project-container h1
+{
+    font-weight: bold;
+    font-size: 41px;
+    color: #ff5500;
+    padding-top: 2rem;
+    animation: glow 1.5s infinite alternate;;
+}
+
+@keyframes glow 
+{
+    from {
+      text-shadow: 0 0 5px red;
+    }
+    to {
+      text-shadow: 0 0 20px orange;
+    }
+}
+
+
+/* -- it having both uploads and live cam access -- */
+
+.input-controls 
+{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    margin-top: 3rem;
+}
+
+.for-uploads,
+#uploadForm 
+{
+    width: 450px;
+    min-height: 150px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:#f6fdee;
+    border-radius: 10px;
+    color: #0c0c0c;
+    gap: 22px;
+    padding: 18px;
+}
+
+.form-heading 
+{
+    font-size: 1.5rem;
+    font-weight: 600;
+    background:#f6fdee;
+    text-shadow: 0 0 1.5px black;
+}
+
+.upload 
+{
+    font-size: 18px;
+    color: #444444;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1px;
+    width: 100%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.upload::file-selector-button 
+{
+    background: none;
+    border: none;
+    color: #333;
+    padding: 8px 12px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-right: 2px solid grey;
+}
+
+.btn 
+{
+    border: 2px solid #ff4400;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    color: #ff4400;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover 
+{
+    background: #ff4400;
+    color: white;
+}
+
+
+/* -- for live camera acess -- */
+.live-camera
+{
+    width: 260px;
+    height: 180px;
+    border-radius: 20px;
+    text-align: center;
+    background:#f6fdee;
+    color: #0c0c0c;
+    margin-top: 2.1rem;
+}
+
+.live-camera h2
+{
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    background:#f6fdee;
+}
+
+.cam-btn
+{
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 7px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid;
+    background:#f6fdee;
+
+}
+
+.cam-btn:hover
+{
+    color: #f6fdee;
+    font-size: 1.1rem;
+    background-color: black;
+    border: white;
+    box-shadow: 0 0 7px #0000008d;
+}
+
+.alert-msg
+{
+    height: 55px;
+    margin-top: 1.5rem;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resultBox
+{
+    width: 200px;
+    height: 35px;
+    color: #000;
+    margin-top: -100%;
+    border-radius: 10px;
+    background: #ff1900ee;
+}
+
+
+/* -- for footer -- */
+.footer
+{
+    color: white;
+    margin-top: 14.2rem;
+    background: #808080e6;
+    height: 45px;
+    padding-top: 10px;
+    border-radius: 7px;
+}
+
+
+/* ✅ Responsive Design Fixes */
+@media (max-width: 768px) {
+    .input-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .for-uploads,
+    #uploadForm {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .live-camera {
+        width: 90%;
+        max-width: 260px;
+        margin-bottom: 1rem;
+    }
+
+    .project-container h1 {
+        font-size: 32px;
+    }
+
+    .form-heading {
+        font-size: 1.3rem;
+    }
+
+    .footer {
+        margin-top: 1.6rem;
+        font-size: 0.9rem;
+        padding: 8px;
+        padding-top: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload::file-selector-button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .cam-btn {
+        font-size: 1rem;
+    }
+
+    #resultBox {
+        font-size: 0.9rem;
+        width: 150px;
+    }
+}
